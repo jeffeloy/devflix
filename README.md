@@ -12,7 +12,7 @@
 
 **APIs**
 
-- [TMDB](https://developers.themoviedb.org/3)
+- [YouTube](https://www.googleapis.com/youtube/v3)
 
 **Autores**
 
@@ -46,9 +46,9 @@
 
   **Contribuir**
 
-Confira a [contributing](https://github.com/jeffeloy/devflix/CONTRIBUTING.md) página para ver os melhores locais para arquivar problemas, iniciar discussões e começar a contribuir.
+Confira a [contributing](https://github.com/jeffeloy/devflix/blob/master/CONTRIBUTING.md) página para ver os melhores locais para arquivar problemas, iniciar discussões e começar a contribuir.
 
 **License**
 
 Lançado em 2020.
-Este projeto está sob a [License](https://github.com/jeffeloy/LICENSE).
+Este projeto está sob a [License](https://github.com/jeffeloy/devflix/blob/master/LICENSE).

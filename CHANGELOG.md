@@ -10,8 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Marca do projeto (ícone, splash e logo)
-- Conexão com a api de vídeos: TMDB (https://developers.themoviedb.org/3)
+- Conexão com a api de vídeos: YouTube (https://www.googleapis.com/youtube/v3)
 - Layout inspirado no NetFlix
+- Api Alternativa: TMDB (https://developers.themoviedb.org/3)
 
 ## [0.1.0] - 2020-05-28
 
