@@ -5,19 +5,19 @@ import { createStackNavigator } from "@react-navigation/stack";
 const AppStack = createStackNavigator();
 
 import Home from "./pages/Home";
-import Courses from "./pages/Courses";
-import Subjects from "./pages/Subjects";
+import Playlist from "./pages/Playlist";
+import Player from "./pages/Player";
+import Header from "./components/Header.js";
 
-function Routes() {
+export default function Routes() {
   return (
     <NavigationContainer>
       <AppStack.Navigator screenOptions={{ headerShown: false }}>
         <AppStack.Screen name="Home" component={Home} />
-        <AppStack.Screen name="Cursos" component={Courses} />
-        <AppStack.Screen name="Disciplinas" component={Subjects} />
+        <AppStack.Screen name="Playlist" component={Playlist} />
+        <AppStack.Screen name="Header" component={Header} />
+        <AppStack.Screen name="Player" component={Player} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
 }
-
-export default Routes;
