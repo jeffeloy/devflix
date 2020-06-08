@@ -1,5 +1,6 @@
 import React from "react";
 import { Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 
 const Container = styled.View`
@@ -21,21 +22,33 @@ const VideoPoster = styled.Image`
   height: 150px;
   border-radius: 6px;
 `;
+const VideoButton = styled.TouchableOpacity``;
 
-function Videos({ label, thumbs }) {
+function Videos({ label, videos }) {
+  const navigation = useNavigation();
   return (
     <Container>
       <Label>{label}</Label>
       <VideoScroll horizontal>
-        {thumbs.map((thumb, item) => (
-          <VideoCard key={String(item)}>
-            <VideoPoster
-              source={{
-                uri: thumb,
-              }}
-            />
-          </VideoCard>
-        ))}
+        {videos.map((video) => {
+          return (
+            <VideoCard key={String(video.id)}>
+              <VideoButton
+                onPress={() => {
+                  navigation.navigate("Player", {
+                    videoId: video.id,
+                  });
+                }}
+              >
+                <VideoPoster
+                  source={{
+                    uri: video.thumb,
+                  }}
+                />
+              </VideoButton>
+            </VideoCard>
+          );
+        })}
       </VideoScroll>
     </Container>
   );

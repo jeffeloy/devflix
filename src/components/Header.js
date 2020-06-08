@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 
 const Container = styled.View`
@@ -19,11 +19,18 @@ const Menu = styled.Text`
   letter-spacing: 0.1px;
 `;
 function Header() {
+  const navigation = useNavigation();
   return (
     <Container>
       <Logo resizeMode="contain" source={require("../assets/short-logo.png")} />
 
-      <Menu>Playlists</Menu>
+      <Menu
+        onPress={() => {
+          navigation.navigate("Playlist");
+        }}
+      >
+        Playlists
+      </Menu>
       <Menu>Vídeos</Menu>
       <Menu>Minha Lista</Menu>
     </Container>

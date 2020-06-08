@@ -1,9 +1,12 @@
 import React from "react";
 import { StatusBar } from "react-native";
 import styled from "styled-components/native";
+import * as ScreenOrientation from "expo-screen-orientation";
+
+import videos from "../../database/videos.json";
+
 import Header from "../../components/Header";
 import Videos from "../../components/Videos";
-
 import Poster from "../../components/Poster";
 
 const Container = styled.ScrollView`
@@ -11,15 +14,11 @@ const Container = styled.ScrollView`
   background-color: #333333;
 `;
 
-const thumbs = [
-  "http://i3.ytimg.com/vi/KTOq047D1nk/maxresdefault.jpg",
-  "http://i3.ytimg.com/vi/WVtijTZPZck/maxresdefault.jpg",
-  "http://i3.ytimg.com/vi/sx4hAHhO9CY/maxresdefault.jpg",
-  "http://i3.ytimg.com/vi/pdFqfOTmd60/maxresdefault.jpg",
-  "http://i3.ytimg.com/vi/WPTQ8fZ0aQk/maxresdefault.jpg",
-];
-
+async function changeScreenOrientation() {
+  await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+}
 function Home() {
+  changeScreenOrientation();
   return (
     <>
       <StatusBar
@@ -36,9 +35,10 @@ function Home() {
           tags={["React Native", "Expo"]}
           content={<Header />}
         ></Poster>
-        <Videos label="Recomendados" thumbs={thumbs} />
-        <Videos label="Lançamentos" thumbs={thumbs} />
-        <Videos label="Mais vistos" thumbs={thumbs} />
+
+        <Videos label="Recomendados" videos={videos} />
+        <Videos label="Lançamentos" videos={videos} />
+        <Videos label="Mais vistos" videos={videos} />
       </Container>
     </>
   );

@@ -40,7 +40,7 @@ const TagMenu = styled.View`
 
 const Tag = styled.Text`
   font-size: 13px;
-  color: #e9ecef;
+  color: #03ca6f;
 `;
 
 const Separator = styled.View`
